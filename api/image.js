@@ -49,7 +49,7 @@ exports.add = function (req, res) {
 
 exports.getAppImages = function (req, res) {
     img
-        .find({'appName': req.params.appName})
+        .find({'appName': req.params.appName}).select('imgUrl appName -_id')
         .exec(function (error, images) {
             if (error) {
                 res
