@@ -2,7 +2,7 @@ var img = require('../models/image.js');
 
 exports.getAll = function (req, res) {
     img
-        .find({})
+        .find({}).select('imgUrl appName -_id')
         .exec(function (error, images) {
             if (error) {
                 res
